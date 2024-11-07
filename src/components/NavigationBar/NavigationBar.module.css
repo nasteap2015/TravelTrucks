@@ -1,0 +1,17 @@
+.barContainer{
+    width: 100%;
+    padding: 24px 64px;
+    display: flex;
+    gap: 450px;
+    align-items: baseline;
+}
+
+.navContainer{
+    display: flex;
+    gap: 32px;
+}
+
+.navLink{
+    font-weight: 500;
+    
+}

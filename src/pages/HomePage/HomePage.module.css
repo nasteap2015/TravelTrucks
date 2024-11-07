@@ -1,0 +1,34 @@
+.homePageContainer{
+    background-image: url("/img/background_image_1x.png");
+    min-height: 696px;
+    padding-top: 260px;
+    padding-left: 64px;
+    color: #F7F7F7;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homepageTitle{
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 0.67;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.homepageText{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    margin-bottom: 40px;
+}
+
+.homepageButton{
+    width: 173px;
+    height: 56px;
+    border-radius: 200px;
+    background-color: #E44848;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+}
