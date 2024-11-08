@@ -23,12 +23,20 @@
     margin-bottom: 40px;
 }
 
-.homepageButton{
+.homePageButtonContainer{
     width: 173px;
     height: 56px;
     border-radius: 200px;
     background-color: #E44848;
     font-weight: 500;
-    text-align: center;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.homePageButton{
+    color: inherit;
+    
 }
