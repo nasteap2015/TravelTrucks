@@ -5,20 +5,16 @@ import CatalogItem from "../CatalogItem/CatalogItem";
 
 const CatalogItemList = () => {
     const trucks = useSelector(selectTrucks);
-    console.log(trucks);
+
     return (
         <ul className={css.itemsList}>
-            {trucks.length > 0 ? (
+            {
                 trucks.map((truck) => (
                     <li className={css.catalogListItem} key={truck.id}>
                         <CatalogItem truck={truck} />
                     </li>
                 ))
-            ) : (
-                <li>
-                    <p>No trucks</p>
-                </li>
-            )}
+            }
         </ul>
     )
 };
