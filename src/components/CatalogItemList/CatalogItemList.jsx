@@ -3,11 +3,12 @@ import { selectTrucks } from "../../redux/trucks/selectors";
 import css from './CatalogItemList.module.css';
 import CatalogItem from "../CatalogItem/CatalogItem";
 
-const CatalogItemList = () => {
+const CatalogItemList = ({ onLoadMore }) => {
     const trucks = useSelector(selectTrucks);
 
     return (
-        <ul className={css.itemsList}>
+        <div>
+            <ul className={css.itemsList}>
             {
                 trucks.map((truck) => (
                     <li className={css.catalogListItem} key={truck.id}>
@@ -15,7 +16,11 @@ const CatalogItemList = () => {
                     </li>
                 ))
             }
-        </ul>
+            </ul>
+            <button onClick={onLoadMore}>Load more</button>
+        </div>
+        
+
     )
 };
 export default CatalogItemList;

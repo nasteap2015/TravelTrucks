@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { markAsFavorite } from "../../redux/favourites/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavourites } from "../../redux/favourites/selectors";
+import formatLocation from "../../utils/formatLocation";
 import clsx from "clsx";
 
 const CatalogItem = ({ truck }) => {
@@ -22,13 +23,12 @@ const CatalogItem = ({ truck }) => {
     const equipmentList = getEquipmentList(truck);
     const reviewsAmount = reviews.length;
     const formatedPrice = String(price.toFixed(2));
-    const formatedLocation = String(location.split(",").reverse().join(","));
+    const formatedLocation = formatLocation(location);
     const dispatch = useDispatch();
     const handleClick = () => {
         dispatch(markAsFavorite(id))
     };
     const favsId = useSelector(selectFavourites);
-    console.log(favsId);
     const isFavourite = favsId.includes(id);
 
     return (
