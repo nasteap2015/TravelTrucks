@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchTrucks } from "../../redux/trucks/operations";
 import { selectLoading, selectError } from "../../redux/trucks/selectors";
 import CatalogItemList from '../../components/CatalogItemList/CatalogItemList';
+import FiltersBar from "../../components/FiltersBar/FiltersBar";
 import Loader from "../../components/Loader/Loader";
+import css from './Catalog.module.css';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -15,10 +17,12 @@ const Catalog = () => {
   }, [dispatch]);
 
     return (
-      <div>
-        {loading && <Loader/>}
-            <CatalogItemList/>
-        </div>
+      <div className={css.catalogContainer}>
+        <FiltersBar/>
+        {loading && <Loader />}
+        {error && <p>Couldn't load information, please try later</p>}
+        <CatalogItemList/>
+      </div>
     )
       
 };
