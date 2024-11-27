@@ -14,7 +14,6 @@ const Catalog = () => {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const [page, setPage] = useState(1);
-  console.log(page);
 
   useEffect(() => {
     dispatch(fetchTrucks({page:1, reset: true}));
@@ -24,8 +23,6 @@ const Catalog = () => {
     dispatch(fetchTrucks({ page: page + 1, filters }));
       setPage((prev) => prev + 1);
     };;
-
-  const trucks = useSelector(selectTrucks);
 
     return (
       <div className={css.catalogContainer}>

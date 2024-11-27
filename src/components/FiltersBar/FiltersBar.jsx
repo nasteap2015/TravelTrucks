@@ -28,16 +28,14 @@ const FiltersBar = () => {
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
                 <Form>
                     <div>
-                        <label htmlFor="locationInput">
-                            Location
-                            <Field type="text" name="location" id="locationInput"/>
-                        </label>
+                        <p className={css.locationTitle}>Location</p>
+                        <Field type="text" name="location" id="locationInput" className={css.locationInput} placeholder="Kyiv, Ukraine"/>
                     </div>
-                    <p>Filters</p>
+                    <p className={css.filtersTitle}>Filters</p>
                     <div>
-                        <h3>Vehicle equipment</h3>
-                        <div>
-                            <label htmlFor={equipmentId}>
+                        <h3 className={css.title}>Vehicle equipment</h3>
+                        <div className={css.filtersButtonContainer}>
+                            <label htmlFor={equipmentId} className={css.filterLabel}>
                                 <Field type="checkbox" id={equipmentId} name="truckEquipment" value="AC"/>
                                 AC
                             </label>
@@ -57,10 +55,16 @@ const FiltersBar = () => {
                     </div>
                     <div>
                         <h3>Transmission</h3>
-                        <label htmlFor={transmissionId}>
+                        <div>
+                            <label htmlFor={transmissionId}>
                             <Field type="radio" id={transmissionId} name="transmission" value="Automatic"/>
                             Automatic
                         </label>
+                        <label htmlFor={transmissionId}>
+                            <Field type="radio" id={transmissionId} name="transmission" value="Manual"/>
+                            Manual
+                        </label>
+                        </div>
                     </div>
                     <div>
                         <h3>Vehicle type</h3>

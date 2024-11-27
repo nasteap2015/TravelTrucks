@@ -1,4 +1,59 @@
 .filtersContainer{
     width: 360px;
+}
+
+.locationTitle{
+    color: rgba(16, 24, 40, 0.6);
+    margin-bottom: 8px;
+}
+
+.locationInput{
+    width: 360px;
+    height: 56px;
+    background-color: rgba(247, 247, 247, 1);
+    background-image: url('/img/map.png');
+    background-repeat: no-repeat;
+    background-position: 20px 18px;
+    padding: 18px 48px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    margin-bottom: 40px;
+}
+
+.filtersTitle{
+    color: rgba(71, 84, 103, 1);
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.title::after{
+    width: 360px;
+    height: 1px;
+    background-color: rgba(218, 221, 225, 1);
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    display: block;
+}
+
+.filtersButtonContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filterLabel{
+    width: 112px;
+    height: 96px;
+    border: 1px solid rgba(218, 221, 225, 1);
     
 }
