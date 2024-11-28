@@ -27,7 +27,15 @@ export const fetchTrucks = createAsyncThunk(
         params.transmission = transmission.toLowerCase();
       }
 
-      ["AC", "kitchen", "TV", "bathroom"].forEach((equipment) => {
+      [
+        "AC",
+        "kitchen",
+        "TV",
+        "bathroom",
+        "refrigerator",
+        "microwave",
+        "water",
+      ].forEach((equipment) => {
         if (truckEquipment.includes(equipment)) {
           params[equipment] = true;
         }
