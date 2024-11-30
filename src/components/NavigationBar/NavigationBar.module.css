@@ -4,6 +4,7 @@
     display: flex;
     gap: 450px;
     align-items: baseline;
+    background-color: #F2F4F7;
 }
 
 .navContainer{

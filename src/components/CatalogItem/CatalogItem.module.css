@@ -71,6 +71,10 @@
     margin-bottom: 24px;
 }
 
+.mapIcon{
+    margin-right: 5px;
+}
+
 .truckDescription{
     height: 24px;
     white-space: nowrap;
@@ -97,6 +101,11 @@
 
 }
 
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
 .catalogItemButtonContainer{
     width: 166px;
     height: 56px;
@@ -106,6 +115,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.catalogItemButtonContainer:hover{
+    background-color: #b63e3e;
 }
 
 .catalogItemButton{

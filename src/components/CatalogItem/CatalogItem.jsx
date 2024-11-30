@@ -5,6 +5,8 @@ import { markAsFavorite } from "../../redux/favourites/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavourites } from "../../redux/favourites/selectors";
 import formatLocation from "../../utils/formatLocation";
+import { TbManualGearbox, TbAutomaticGearbox } from "react-icons/tb";
+import getIcon from "../../utils/getIcon";
 import clsx from "clsx";
 
 const CatalogItem = ({ truck }) => {
@@ -57,7 +59,7 @@ const CatalogItem = ({ truck }) => {
                         </svg>
                         {rating}({reviewsAmount} Reviews)</p>
                     <p>
-                        <svg width="16px" height="16px">
+                        <svg width="16px" height="16px" className={css.mapIcon}>
                             <use href='../../../public/img/icons.svg#icon-map'></use>
                         </svg>
                         {formatedLocation}
@@ -66,32 +68,26 @@ const CatalogItem = ({ truck }) => {
                 <p className={css.truckDescription}>{description}</p>
                 <ul className={css.equipmentList}>
                     <li className={css.equipmentItem} key={transmission}>
-                        <svg width="20px" height="20px">
-                            <use href={`../../../public/img/icons.svg#icon-automatic`}></use>
-                        </svg>
+                        {transmission === "automatic" ? <TbAutomaticGearbox className={css.icon} /> : <TbManualGearbox className={css.icon} />}
                         {transmission}
                     </li>
                     {equipmentList.length > 0 ? (
                     equipmentList.map((equipmentItem) => (
-                    <li className={css.equipmentItem} key={equipmentItem}>
-                        <svg width="20px" height="20px" stroke="#fff">
-                            <use href={`../../../public/img/icons.svg#icon-${equipmentItem}`}></use>
-                        </svg>
+                        <li className={css.equipmentItem} key={equipmentItem}>
+                        {getIcon(equipmentItem)}
                         {equipmentItem}
                     </li>
-                ))
-            ) : (
-                <li>
-                    <p>Equipment didn't specified</p>
-                </li>
-            )}
+                    ))
+                    ) : (
+                    <li>
+                        <p>Equipment didn't specified</p>
+                    </li>
+                    )}
                 </ul>
-
                 <div className={css.catalogItemButtonContainer}>
-                <Link className={css.catalogItemButton} to="/catalog/:id">Show more</Link>
+                    <Link className={css.catalogItemButton} to={`/catalog/${id}`}>Show more</Link>
+                </div>
             </div>
-            </div>
-            
         </div>
     )
 }
