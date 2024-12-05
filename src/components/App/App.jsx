@@ -1,5 +1,5 @@
 import { lazy, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Router, Routes } from 'react-router-dom';
 import './App.css'
 import { Layout } from '../Layout/Layout';
 
@@ -11,13 +11,14 @@ function App() {
 
 
   return (
-    <Layout>
+      <Layout>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/catalog" element={<Catalog/>} />
           <Route path="/catalog/:id" element={<CatalogItemPage/>} />
         </Routes>
-    </Layout>
+      </Layout>
+    
   )
 }
 

@@ -1,30 +1,18 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { fetchTruckById } from './fetchTruckById';
+import { fetchTruckById } from "./fetchTruckById";
 
-const useFetchTruckById = () => {
-    const { id } = useParams();
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
-    const [truck, setTruck] = useState({});
-
-    useEffect(() => {
-        const getTruckDetails = async() => {
-            try {
-                setError(false);
-                setLoading(true);
-                const { data } = await fetchTruckById(id);
-                setTruck(data);
-            } catch (error) {
-                setError(true);
-            } finally {
-                setLoading(false);
-            }
-        }
-        getTruckDetails();
-    }, [id]);
-
-    return { truck, loading, error };
+const getTruckDetails = async (id, setLoading, setError, setTruck) => {
+    try {
+        setError(false);
+        setLoading(true);
+        const data = await fetchTruckById(id); 
+        console.log("Truck data fetched:", data);
+        setTruck(data); 
+    } catch (err) {
+        console.error("Error fetching truck:", err);
+        setError(true); 
+    } finally {
+        setLoading(false); 
+    }
 };
 
-export default useFetchTruckById;
+export default getTruckDetails;
