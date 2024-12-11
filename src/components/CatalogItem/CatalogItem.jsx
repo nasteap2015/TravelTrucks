@@ -1,6 +1,6 @@
 import getEquipmentList from "../../utils/getEquipmentList";
 import css from './CatalogItem.module.css';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { markAsFavorite } from "../../redux/favourites/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavourites } from "../../redux/favourites/selectors";

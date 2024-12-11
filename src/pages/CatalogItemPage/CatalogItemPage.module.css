@@ -1,0 +1,24 @@
+.catalogItemPageContainer{
+    padding: 16px;
+}
+
+.goBackButtonContainer {
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 200px;
+    background-color: #E44848;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.goBackButtonContainer:hover {
+    background-color: #b63e3e;
+}
+
+.goBackButton {
+    color: #F7F7F7;
+    font-weight: 500;
+}

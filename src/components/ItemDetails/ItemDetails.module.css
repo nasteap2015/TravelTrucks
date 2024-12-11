@@ -1,0 +1,49 @@
+.itemName{
+    line-height: 1.333;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.ratingLocationContainer{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.rating{
+    text-decoration: underline;
+}
+
+.mapIcon{
+    margin-right: 4px;
+}
+
+.itemPrice{
+    line-height: 1.333;
+    margin-bottom: 28px;
+}
+
+.galleryList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    margin-bottom: 28px;
+}
+
+.galleryItem{
+    width: 292px;
+    height: 312px;
+    overflow: hidden;
+}
+
+.galleryItemImg{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.description{
+    color: #475467;
+    margin-bottom: 60px;
+}
