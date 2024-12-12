@@ -1,6 +1,5 @@
 import css from './ItemDetails.module.css';
 import formatLocation from "../../utils/formatLocation";
-import getEquipmentList from "../../utils/getEquipmentList";
 import { Link, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
@@ -12,11 +11,9 @@ const ItemDetails = ({ truck }) => {
         reviews,
         location,
         description,
-        transmission,
         gallery
     } = truck;
 
-    const equipmentList = getEquipmentList(truck);
     const reviewsAmount = reviews.length;
     const formatedPrice = String(price.toFixed(2));
     const formatedLocation = formatLocation(location);
@@ -59,10 +56,16 @@ const ItemDetails = ({ truck }) => {
                     </li>
                 </ul>
             </div>
-                     
-            <Suspense fallback={<div>Loading subpage...</div>}>
-                <Outlet />
-            </Suspense>
+            
+            <div>
+                <Suspense fallback={<div>Loading subpage...</div>}>
+                    <Outlet />
+                </Suspense>
+                <div>
+                    <h3>Book your campervan now</h3>
+                    
+                </div>
+            </div>
         </div>
     )
 };

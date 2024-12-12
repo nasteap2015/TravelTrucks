@@ -1,8 +1,7 @@
 import Loader from "../../components/Loader/Loader";
 import css from './CatalogItemPage.module.css';
 import getTruckDetails from "../../utils/useFetchTruckbyId";
-import { Link, useLocation } from "react-router-dom";
-import { useRef } from "react";
+import { Link } from "react-router-dom";
 import ItemDetails from "../../components/ItemDetails/ItemDetails";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -12,7 +11,7 @@ const CatalogItemPage = () => {
     const [truck, setTruck] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-
+    
     useEffect(() => {
         if (!id) {
             return;
