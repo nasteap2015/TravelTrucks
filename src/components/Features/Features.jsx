@@ -19,6 +19,10 @@ const Features = () => {
         getTruckDetails(id, setLoading, setError, setTruck);
     }, [id]);
 
+    if (loading) {
+        return <p>Loading details...</p>
+    }
+    
     if (!truck) {
         return <p>No truck data available.</p>;
     }

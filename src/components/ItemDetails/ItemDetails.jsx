@@ -1,7 +1,9 @@
 import css from './ItemDetails.module.css';
+import clsx from 'clsx';
 import formatLocation from "../../utils/formatLocation";
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import { Formik, Form, Field } from 'formik';
 
 const ItemDetails = ({ truck }) => {
     const {
@@ -18,6 +20,10 @@ const ItemDetails = ({ truck }) => {
     const formatedPrice = String(price.toFixed(2));
     const formatedLocation = formatLocation(location);
 
+    const buildLinkClass = ({ isActive }) => {
+        return clsx(css.link, isActive && css.active);
+    };
+    
     return (
         <div>
             <h2 className={css.itemName}>{name}</h2>
@@ -46,16 +52,14 @@ const ItemDetails = ({ truck }) => {
             </ul>
             <p className={css.description}>{description}</p>
 
-            <div>
-                <ul>
+                <ul className={css.linksContainer}>
                     <li>
-                        <Link to="features">Features</Link>
+                        <NavLink to="features" className={buildLinkClass}>Features</NavLink>
                     </li>
                     <li>
-                        <Link to="reviews">Reviews</Link>
+                        <NavLink to="reviews" className={buildLinkClass}>Reviews</NavLink>
                     </li>
                 </ul>
-            </div>
             
             <div>
                 <Suspense fallback={<div>Loading subpage...</div>}>
@@ -63,6 +67,14 @@ const ItemDetails = ({ truck }) => {
                 </Suspense>
                 <div>
                     <h3>Book your campervan now</h3>
+                    <p>Stay connected! We are always ready to help you.</p>
+                    <Formik>
+                        <Form>
+                            <Field></Field>
+                            <Field></Field>
+                            <Field></Field>
+                        </Form>
+                    </Formik>
                     
                 </div>
             </div>

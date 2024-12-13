@@ -47,3 +47,42 @@
     color: #475467;
     margin-bottom: 60px;
 }
+
+.linksContainer{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 68px;
+    position: relative;
+}
+
+.linksContainer::after{
+    width: 1312px;
+    height: 1px;
+    background-color: #DADDE1;
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    display: block;
+}
+
+.link{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    position: relative;
+}
+
+.active {
+    color: inherit;
+}
+
+.active::after{
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    background-color: #E44848;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}

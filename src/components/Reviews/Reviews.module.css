@@ -1,0 +1,49 @@
+.reviewsContainer{
+    width: 631px;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+
+.reviewItem{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.imgNameContainer {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.reviewImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background-color: #F2F4F7;
+    color: #E44848;
+    font-size: 24px;
+    line-height: 1.333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nameRatingContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reviewText{
+    color: #475467;
+    
+}
+
+
+
+
