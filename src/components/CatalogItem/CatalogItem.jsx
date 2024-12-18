@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFavourites } from "../../redux/favourites/selectors";
 import formatLocation from "../../utils/formatLocation";
 import { TbManualGearbox, TbAutomaticGearbox } from "react-icons/tb";
+import { CiMap } from "react-icons/ci";
+import { FaStar } from "react-icons/fa";
+import { LuHeart } from "react-icons/lu";
 import getIcon from "../../utils/getIcon";
 import clsx from "clsx";
 
@@ -44,26 +47,21 @@ const CatalogItem = ({ truck }) => {
                     <h2 className={css.itemName}>{name}</h2>
                     <div className={css.priceContainer}>
                         <h2 className={css.itemPrice}>€{formatedPrice}</h2>
-                            <button onClick={handleClick} className={css.favButton}>
-                                <svg className={clsx(isFavourite && css.favIconFavourite)} width="24px" height="20.57px">
-                                    <use href="../../../public/img/icons.svg#icon-heart"></use>
-                                </svg>
-                            </button>
+                        <button onClick={handleClick} className={css.favButton}>
+                            <LuHeart className={clsx(isFavourite && css.favIconFavourite)} size={24} />
+                        </button>
                     </div>
                 </div>
                 
                 <div className={css.ratingLocationContainer}>
-                    <p>
-                        <svg width="16px" height="16px" fill="#FFC531">
-                            <use href="../../../public/img/icons.svg#icon-star"></use>
-                        </svg>
-                        {rating}({reviewsAmount} Reviews)</p>
-                    <p>
-                        <svg width="16px" height="16px" className={css.mapIcon}>
-                            <use href='../../../public/img/icons.svg#icon-map'></use>
-                        </svg>
-                        {formatedLocation}
-                    </p>
+                    <div className={css.detailsContainer}>
+                        <FaStar color="#FFC531" size={16} />
+                        <p>{rating}({reviewsAmount} Reviews)</p>
+                    </div>
+                    <div className={css.detailsContainer}>
+                        <CiMap size={20} />
+                        <p>{formatedLocation}</p>
+                    </div>
                 </div>
                 <p className={css.truckDescription}>{description}</p>
                 <ul className={css.equipmentList}>

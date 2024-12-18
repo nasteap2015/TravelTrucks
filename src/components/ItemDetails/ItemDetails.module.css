@@ -14,8 +14,10 @@
     text-decoration: underline;
 }
 
-.mapIcon{
-    margin-right: 4px;
+.detailsContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px
 }
 
 .itemPrice{

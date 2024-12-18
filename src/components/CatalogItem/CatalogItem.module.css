@@ -52,17 +52,18 @@
     display: flex;
     gap: 12px;
     align-items: center;
+    
 }
 
 .favButton{
     border: none;
     background-color: #fff;
     width: 26px;
-    height: 24px;
+    height: 26px;
 }
 
 .favIconFavourite{
-    fill:#E44848;
+    stroke:#E44848;
 }
 
 .ratingLocationContainer{
@@ -71,8 +72,10 @@
     margin-bottom: 24px;
 }
 
-.mapIcon{
-    margin-right: 5px;
+.detailsContainer{
+    display: flex;
+    align-items: center;
+    gap: 4px
 }
 
 .truckDescription{

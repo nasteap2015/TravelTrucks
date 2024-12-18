@@ -4,6 +4,8 @@ import formatLocation from "../../utils/formatLocation";
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { Formik, Form, Field } from 'formik';
+import { CiMap } from "react-icons/ci";
+import { FaStar } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
 
 const ItemDetails = ({ truck }) => {
@@ -42,17 +44,14 @@ const ItemDetails = ({ truck }) => {
         <div>
             <h2 className={css.itemName}>{name}</h2>
             <div className={css.ratingLocationContainer}>
-                <p className={css.rating}>
-                    <svg width="16px" height="16px" fill="#FFC531">
-                        <use href="../../../public/img/icons.svg#icon-star"></use>
-                    </svg>
-                    {rating}({reviewsAmount} Reviews)</p>
-                <p>
-                    <svg width="16px" height="16px" className={css.mapIcon}>
-                        <use href='../../../public/img/icons.svg#icon-map'></use>
-                    </svg>
-                    {formatedLocation}
-                </p>
+                <div className={css.detailsContainer}>
+                        <FaStar color="#FFC531" size={16} />
+                        <p>{rating}({reviewsAmount} Reviews)</p>
+                    </div>
+                    <div className={css.detailsContainer}>
+                        <CiMap size={20} />
+                        <p>{formatedLocation}</p>
+                    </div>
             </div>
             <h2 className={css.itemPrice}>€{formatedPrice}</h2>
             <ul className={css.galleryList}>

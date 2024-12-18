@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar } from "react-icons/fa"; // Font Awesome React Icons
+import { FaStar } from "react-icons/fa"; 
 
 const StarRating = ({ reviewer_rating }) => {
     return (
