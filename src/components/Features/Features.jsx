@@ -20,7 +20,7 @@ const Features = () => {
     }, [id]);
 
     if (loading) {
-        return <p>Loading details...</p>
+        return <p className={css.loading}>Loading details...</p>
     }
     
     if (!truck) {

@@ -86,3 +86,67 @@
     left: 0;
     right: 0;
 }
+
+.subPageContainer{
+    display: flex;
+    gap: 40px;
+}
+
+.bookFormContainer{
+    width: 641px;
+    height: 588px;
+    border: 1px solid #DADDE1;
+    border-radius: 10px;
+    padding: 44px 57px;
+    box-sizing: border-box;
+}
+
+.bookTitle{
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.bookText{
+    color: #6C717B;
+    margin-bottom: 24px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.input{
+    background-color: #F7F7F7;
+    padding: 18px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.input:last-child {
+    height: 118px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.sendButton{
+    width: 166px;
+    height: 56px;
+    padding: 16px 0;
+    border-radius: 200px;
+    color: #FFFFFF;
+    font-weight: 500;
+    background-color: #E44848;
+    border: none;
+    font-size: 16px;
+}
+
+.sendButton:hover {
+    background-color: #b63e3e;
+}

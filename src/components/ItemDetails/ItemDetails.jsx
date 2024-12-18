@@ -4,6 +4,7 @@ import formatLocation from "../../utils/formatLocation";
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { Formik, Form, Field } from 'formik';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ItemDetails = ({ truck }) => {
     const {
@@ -23,6 +24,19 @@ const ItemDetails = ({ truck }) => {
     const buildLinkClass = ({ isActive }) => {
         return clsx(css.link, isActive && css.active);
     };
+
+    const handleSubmit = (values, actions) => {
+        toast.success('Request successfully sent');
+        actions.resetForm();
+    };
+
+    const initialValues = {
+        userName: "",
+        userEmail: "",
+        bookingDate: "",
+        comment: "",
+    };
+
     
     return (
         <div>
@@ -61,21 +75,27 @@ const ItemDetails = ({ truck }) => {
                     </li>
                 </ul>
             
-            <div>
+            <div className={css.subPageContainer}>
                 <Suspense fallback={<div>Loading subpage...</div>}>
                     <Outlet />
                 </Suspense>
-                <div>
-                    <h3>Book your campervan now</h3>
-                    <p>Stay connected! We are always ready to help you.</p>
-                    <Formik>
-                        <Form>
-                            <Field></Field>
-                            <Field></Field>
-                            <Field></Field>
-                        </Form>
-                    </Formik>
-                    
+                <div className={css.bookFormContainer}>
+                    <h3 className={css.bookTitle}>Book your campervan now</h3>
+                    <p className={css.bookText}>Stay connected! We are always ready to help you.</p>
+                    <div className={css.formContainer}>
+                        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+                            <Form>
+                                <div className={css.form}>
+                                    <Field type="text" name="userName" placeholder="Name*" className={css.input}/>
+                                    <Field type="email" name="userEmail" placeholder="Email*" className={css.input}/>
+                                    <Field type="text" name="bookingDate" placeholder="Booking date*" className={css.input}/>
+                                    <Field as="textarea" name="comment" placeholder="Comment" className={css.input}/>
+                                </div>
+                                <button type="submit" className={css.sendButton}>Send</button>
+                            </Form>
+                        </Formik>
+                        <Toaster />
+                    </div>
                 </div>
             </div>
         </div>

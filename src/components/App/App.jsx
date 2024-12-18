@@ -1,5 +1,5 @@
-import { lazy, useEffect } from 'react';
-import { Route, Router, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 import { Layout } from '../Layout/Layout';
 
@@ -17,7 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/catalog" element={<Catalog/>} />
-          <Route path="/catalog/:id" element={<CatalogItemPage />}>
+        <Route path="/catalog/:id" element={<CatalogItemPage />}>
+            <Route index element={<Navigate to="features" replace />} />
             <Route path="features" element={<Features />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>

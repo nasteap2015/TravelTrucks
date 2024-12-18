@@ -19,7 +19,7 @@ const Features = () => {
     }, [id]);
 
     if (loading) {
-        return <p>Loading reviews...</p>
+        return <p className={css.loading}>Loading reviews...</p>
     }
 
     if (!truck) {
