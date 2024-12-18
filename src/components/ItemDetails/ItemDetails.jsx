@@ -7,6 +7,8 @@ import { Formik, Form, Field } from 'formik';
 import { CiMap } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
+import ImageModal from '../ImageModal/ImageModal';
 
 const ItemDetails = ({ truck }) => {
     const {
@@ -39,6 +41,17 @@ const ItemDetails = ({ truck }) => {
         comment: "",
     };
 
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalUrl, setModalUrl] = useState('');
+
+    function openModal(imageUrl) {
+    setIsOpen(true);
+    setModalUrl(imageUrl);
+    };
+
+    function closeModal() {
+        setIsOpen(false);
+    };
     
     return (
         <div>
@@ -57,7 +70,7 @@ const ItemDetails = ({ truck }) => {
             <ul className={css.galleryList}>
                 {
                     gallery.map((galleryItem) => (
-                        <li className={css.galleryItem} key={gallery.indexOf(galleryItem)}>
+                        <li className={css.galleryItem} key={gallery.indexOf(galleryItem)} onClick={() =>openModal(galleryItem.original)}>
                            <img className={css.galleryItemImg} src={galleryItem.original} alt={name} />
                         </li>
                     ))
@@ -97,7 +110,9 @@ const ItemDetails = ({ truck }) => {
                     </div>
                 </div>
             </div>
+            <ImageModal isOpen={modalIsOpen} onRequestClose={closeModal} imageU={modalUrl} />
         </div>
+        
     )
 };
 
