@@ -5,6 +5,7 @@
     gap: 450px;
     align-items: baseline;
     background-color: #F2F4F7;
+    box-sizing: border-box;
 }
 
 .navContainer{
@@ -15,4 +16,8 @@
 .navLink{
     font-weight: 500;
     
+}
+
+.active{
+    color: #D84343;
 }
